@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Goober Web</title>
+
+<!-- Custom Tab Icon -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤪</text></svg>">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:linear-gradient(135deg,#7c3aed,#2563eb);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+.container{
+    text-align:center;
+    background:rgba(255,255,255,0.12);
+    backdrop-filter:blur(10px);
+    padding:50px;
+    border-radius:25px;
+    color:white;
+    box-shadow:0 0 30px rgba(0,0,0,0.25);
+    max-width:700px;
+    width:90%;
+    animation:fadeIn 1s ease;
+}
+
+h1{
+    font-size:4rem;
+    margin-bottom:15px;
+}
+
+p{
+    font-size:1.2rem;
+    opacity:.95;
+    margin-bottom:30px;
+}
+
+.main-btn{
+    padding:15px 35px;
+    font-size:1.1rem;
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    background:white;
+    color:#2563eb;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.main-btn:hover{
+    transform:translateY(-5px) scale(1.05);
+    box-shadow:0 10px 25px rgba(255,255,255,.3);
+}
+
+.goober-call{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    width:85px;
+    height:85px;
+    border-radius:50%;
+    border:none;
+    cursor:pointer;
+    font-size:40px;
+    background:white;
+    box-shadow:0 0 25px rgba(0,0,0,.3);
+    transition:0.3s;
+    animation:bounce 2s infinite;
+}
+
+.goober-call:hover{
+    transform:scale(1.15) rotate(15deg);
+}
+
+@keyframes bounce{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-12px);
+    }
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container" id="mainBox">
+    <h1>Goober Web 🤪</h1>
+
+    <p>
+        Welcome to Goober Web, the goofiest website on the internet.
+        Try finding the correct button...
+    </p>
+
+    <button class="main-btn" onclick="wrongButton()">
+        Enter The Goober Zone
+    </button>
+</div>
+
+<!-- Goofy Call Button -->
+<button class="goober-call" onclick="window.location.href='tel:6767'">
+    🤪
+</button>
+
+<script>
+function wrongButton() {
+    document.getElementById("mainBox").innerHTML = `
+        <h1>😏 Oops!</h1>
+        <p style="font-size:1.6rem;">
+            Nahh Wrong Button,<br>
+            try pressing smth else.
+        </p>
+    `;
+}
+</script>
+
+</body>
+</html>
